@@ -1,0 +1,1389 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="pt-br" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="pt-br" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="pt-br" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="pt-br" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="pt-br" class="no-js">
+<!--<![endif]-->
+
+<head>
+  <title>Goldmap: Orçamentos</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+  <meta name="description" content="Controle financeiro pessoal à prova de falhas com apenas 10 minutos por semana para quem não quer anotar gasto por gasto - Goldmap: Finan&ccedil;as pessoais e investimentos."
+  />
+  <meta name="author" content="RD2M Internet Things - http://rd2m.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <!-- Apple Touch -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/icon-touch/apple-touch-icon-152x152-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/icon-touch/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/icon-touch/apple-touch-icon-120x120-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/icon-touch/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/img/icon-touch/apple-touch-icon-76x76-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/icon-touch/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/img/icon-touch/apple-touch-icon-precomposed.png">
+  <link rel="stylesheet" type="text/css" href="/css/jquery-ui-goldmap.1482832877.css" />
+  <link rel="stylesheet" type="text/css" href="/css/jquery-ui-customizations.1482832877.css" />
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.1482832877.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/monaco.1482832878.css" />
+  <script type="text/javascript" src="/js/libs/modernizr.1482832763.js"></script>
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function (e, b) {
+      if (!b.__SV) {
+        var a, f, i, g; window.mixpanel = b; b._i = []; b.init = function (a, e, d) {
+          function f(b, h) { var a = h.split("."); 2 == a.length && (b = b[a[0]], h = a[1]); b[h] = function () { b.push([h].concat(Array.prototype.slice.call(arguments, 0))) } } var c = b; "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel"; c.people = c.people || []; c.toString = function (b) { var a = "mixpanel"; "mixpanel" !== d && (a += "." + d); b || (a += " (stub)"); return a }; c.people.toString = function () { return c.toString(1) + ".people (stub)" }; i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+          for (g = 0; g < i.length; g++)f(c, i[g]); b._i.push([a, e, d])
+        }; b.__SV = 1.2; a = e.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = ("https:" === e.location.protocol ? "https:" : "http:") + '//cdn.mxpnl.com/libs/mixpanel-2.2.min.js'; f = e.getElementsByTagName("script")[0]; f.parentNode.insertBefore(a, f)
+      }
+    })(document, window.mixpanel || []);
+    mixpanel.init("f2862e4c23e917031c64207fd9f3f2f5"); mixpanel.identify("diego.menezzes@gmail.com"); mixpanel.people.set({ "$name": "Diego" });</script>
+  <!-- end Mixpanel -->
+</head>
+
+<body id="default">
+  <header id="header">
+    <div id="menu-workaround"></div>
+    <ul id="main-menu">
+      <li class="logo">
+        <a href="/dashboards/" title="Goldmap, na trilha dos seus sonhos.">
+          <img src="/img/logo.png" alt="Goldmap, na trilha dos seus sonhos." id="logo" />
+        </a>
+      </li>
+      <li class="sprite-new sperator"></li>
+      <li class="sprite-header-new spacing" id="nav-inicio">
+        <a href="/dashboards/" class="dashboard" title="Painel">Início</a>
+      </li>
+      <li class="sprite-new sperator"></li>
+      <li class="sprite-header-new spacing" id="nav-orcamento">
+        <a href="/budgets/" class="budgets" title="Orçamentos">Orçamentos</a>
+      </li>
+      <li class="sprite-new sperator"></li>
+      <li class="sprite-header-new spacing" id="nav-cenario">
+        <a href="/balances/" class="scenarios" title="Saldos">Saldos</a>
+      </li>
+      <li class="sprite-new sperator"></li>
+    </ul>
+    <ul class="header-right">
+      <li class="sprite-new sperator"></li>
+      <li class="sprite-header-new spacing  nao-abre" original-title="stream" id="nav-configuracoes">
+        <a href="/users/settings/" class="settings" title="Preferências">Configurações</a>
+      </li>
+      <li class="sprite-new sperator"></li>
+      <li class="sprite-header-new spacing  nao-abre" original-title="stream" id="nav-sair">
+        <a href="/users/logout" class="logout" title="Sair&lt;span&gt;diego.menezzes@gmail.com&lt;/span&gt;">Sair</a>
+      </li>
+    </ul>
+    <a class="button gray" id="btn-need-help" href="#/support/">
+      <span>Solicitar suporte</span>
+    </a>
+    <div id="support" style="display:none;">
+      <div class="inner">
+        <h2>Solicitar suporte via...</h2>
+        <div class="block-1">
+          <div class="mini-block">
+            <h3>Email</h3>
+            <p>Envie para
+              <a href="mailto:goldmap@goldmap.com.br" target="_blank">goldmap@goldmap.com.br</a>
+            </p>
+          </div>
+          <!-- <div class="mini-block">
+				<h3>Telefone</h3>
+				<p>Ligue (31) 3333-3333</p>
+			</div> -->
+          <!-- <div class="mini-block">
+				<h3>Skype</h3>
+				<p>Adicione-nos no skype pelo nome <a href="callto:atendimento.goldmap">atendimento.goldmap</a></p>
+			</div> -->
+          <div class="mini-block">
+            <h3>Blog</h3>
+            <p>Leia posts no
+              <a href="http://blog.goldmap.com.br/" title="Ir para o Blog do Goldmap" target="_blank">blog</a> para aprender como usar melhor seu dinheiro.</p>
+          </div>
+          <div class="mini-block">
+            <h3>Central de suporte</h3>
+            <p>Tire dúvidas lendo os artigos da nossa
+              <a href="http://suporte.goldmap.com.br/base-de-conhecimento/" title="Ir para a Central de Suporte Goldmap" target="_blank">base de conhecimento</a>.</p>
+          </div>
+          <!-- <div class="mini-block">
+				<h3>Sinal de fumaça</h3>
+				<p>Estamos aguardando a instalação pela operadora (:</p>
+			</div> -->
+          <div class="clearfix"></div>
+        </div>
+        <hr />
+        <div class="block-2">
+          <form id="support-form" method="post" action="/contacts/support" accept-charset="utf-8">
+            <div class="input text">
+              <label for="support-msg">Ou envie-nos sua dúvida:</label>
+              <textarea name="data[Contacts][msg]" rows="5" cols="5" id="support-msg"></textarea>
+            </div>
+            <input type="submit" value="Enviar" class="button gray" id="btn-send-support-msg" />
+            <div class="error" style="display:none;">Erro no envio. Tente novamente.</div>
+          </form>
+          <div id="support-form-loading" style="display:none;">
+            <div class="loader-3"></div>
+            <p class="sending">&nbsp;&nbsp;&nbsp;Enviando...</p>
+          </div>
+          <div id="support-form-sent" style="display:none;">
+            <p>
+              <span class="success"></span>
+              <span class="line1">Seu pedido de suporte foi registrado!</span>
+              <br />
+              <span class="line2">Normalmente respondemos dentro de, no máximo,
+                <strong>1 dia útil.</strong>
+              </span>
+            </p>
+            <p>
+              <a id="btn-show-support-form" href="#/">&laquo; enviar outra dúvida</a>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <hr />
+        <div class="block-3">
+          <p>Nosso horário de atendimento p/ suporte é de segunda à sexta de 08:00 às 18:00 (exceto feriados)</p>
+        </div>
+      </div>
+      <!-- div.inner -->
+    </div>
+  </header>
+
+  <div id="content">
+
+    <div id="budgets" class="index fundamental-state menu-select" tabindex="-1" style="display:none;">
+
+      <nav id="annual-list" class="list" style="">
+        <div id="budget-2017" data-id="2299" class="notebook annual past initiated-year pending">
+
+          <nav class="actions">
+            <a href="#/delete/2017/" class="ui-icon ui-icon-trash btn-confirm-delete-year" title="Excluir"></a>
+          </nav>
+
+          <div class="content">
+            <a href="#/2017/" class="budget-link btn-open-year">
+              <span class="budget-name">Ano 2017</span>
+              <span class="budget-subtitle">Previsão</span>
+              <span class="ribbon" title="Editar ano atual"></span>
+              <span class="budget-no-pending ui-icon ui-icon-check" title="Ano concluído"></span>
+              <span class="budget-pending ui-icon ui-icon-alert" title="4 itens pendentes"></span>
+              <span class="budget-income fields" title="Renda para 2017">
+                <span class="budget-income-value">16004.23</span>
+              </span>
+              <span class="budget-expense fields" title="Orçado em 2017">-
+                <span class="budget-expense-value">15999.26</span>
+              </span>
+              <span class="budget-balance fields positive" title="Sobra em 2017">=
+                <span class="budget-balance-value">4.97</span>
+              </span>
+              <span class="budget-accumulated fields positive" title="Sobra acumulada no ano anterior">
+                <span class="plus">+</span>
+                <span class="budget-accumulated-value">0</span>
+              </span>
+              <span class="budget-available fields positive" title="Disponível ao final do ano">=
+                <span class="budget-available-value">4.97</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div id="budget-2018" data-id="2583" class="notebook annual current initiated-year pending">
+          <nav class="actions">
+            <a href="#/delete/2018/" class="ui-icon ui-icon-trash btn-confirm-delete-year" title="Excluir"></a>
+          </nav>
+          <div class="content">
+            <a href="#/2018/" class="budget-link btn-open-year">
+              <span class="budget-name">Ano 2018</span>
+              <span class="budget-subtitle">Previsão</span>
+              <span class="ribbon" title="Editar ano atual"></span>
+              <span class="budget-no-pending ui-icon ui-icon-check" title="Ano concluído"></span>
+              <span class="budget-pending ui-icon ui-icon-alert" title="1 item pendente"></span>
+              <span class="budget-income fields" title="Renda para 2018">
+                <span class="budget-income-value">0</span>
+              </span>
+              <span class="budget-expense fields" title="Orçado em 2018">-
+                <span class="budget-expense-value">500</span>
+              </span>
+              <span class="budget-balance fields negative" title="Déficit estimado em 2018">=
+                <span class="budget-balance-value">-500</span>
+              </span>
+              <span class="budget-accumulated fields positive" title="Sobra acumulada no ano anterior">
+                <span class="plus">+</span>
+                <span class="budget-accumulated-value">4.97</span>
+              </span>
+              <span class="budget-available fields negative" title="Orçamento anual excedido">=
+                <span class="budget-available-value">-495.03</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div id="add" class="notebook">
+          <a href="#/" id="btn-add-year">Adicionar ano
+            <span>+</span>
+          </a>
+        </div>
+        <div class="clearfix"></div>
+      </nav>
+
+      <div id="delete-annual-budget-confirmation" title="Excluindo ano" class="dialog-confirmation-v2" style="display:none;">
+        <div class="alert">
+          <p>
+            <span class="ui-icon ui-icon-alert"></span>
+            <strong>Atenção!</strong> Você irá excluir o ano
+            <span id="budget-year-to-delete" data-id=""></span>. Esse ano não possui nenhum orçamento mensal criado.</p>
+          <p class="counting" style="display:none">Contando orçamentos...</p>
+          <p class="counted" style="display:none">Esse ano possui
+            <span class="count"></span>
+            <span class="pluralize plural singular">
+              <span class="plural">orçamentos</span>
+              <span class="singular">orçamento</span>
+            </span>.</p>
+        </div>
+        <footer>
+          <a href="#/" class="button gray" id="btn-cancel-delete-year">Cancelar</a>
+          <a href="#/" class="button gray" id="btn-delete-year">Excluir ano</a>
+        </footer>
+      </div>
+      <!--div#delete-annual-confirmation-->
+
+
+      <div id="monthly-list" class="" style="">
+        <header>
+          <h2 id="index-year-h2"></h2>
+          <button id="btn-close-year">
+            <span>Todos os Anos</span>
+          </button>
+          <hr />
+        </header>
+        <div id="monthly-list-itens">
+          <div id="budget-01" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/01/" class="budget-link btn-open-month">
+                <span class="budget-name">Janeiro</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para janeiro">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em janeiro">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>janeiro de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-02" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/02/" class="budget-link btn-open-month">
+                <span class="budget-name">Fevereiro</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para fevereiro">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em fevereiro">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>fevereiro de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-03" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/03/" class="budget-link btn-open-month">
+                <span class="budget-name">Março</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para março">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em março">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>março de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-04" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/04/" class="budget-link btn-open-month">
+                <span class="budget-name">Abril</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para abril">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em abril">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>abril de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+
+
+          <div id="budget-05" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/05/" class="budget-link btn-open-month">
+                <span class="budget-name">Maio</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para maio">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em maio">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>maio de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-06" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/06/" class="budget-link btn-open-month">
+                <span class="budget-name">Junho</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para junho">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em junho">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>junho de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-07" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/07/" class="budget-link btn-open-month">
+                <span class="budget-name">Julho</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para julho">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em julho">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>julho de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-08" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/08/" class="budget-link btn-open-month">
+                <span class="budget-name">Agosto</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para agosto">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em agosto">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>agosto de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+
+
+          <div id="budget-09" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/09/" class="budget-link btn-open-month">
+                <span class="budget-name">Setembro</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para setembro">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em setembro">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>setembro de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-10" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/10/" class="budget-link btn-open-month">
+                <span class="budget-name">Outubro</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para outubro">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em outubro">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>outubro de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-11" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/11/" class="budget-link btn-open-month">
+                <span class="budget-name">Novembro</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para novembro">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em novembro">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>novembro de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div id="budget-12" data-id="" class="notebook loading">
+            <nav class="actions"></nav>
+            <div class="content">
+              <a href="#/12/" class="budget-link btn-open-month">
+                <span class="budget-name">Dezembro</span>
+                <span class="budget-subtitle">Previsão</span>
+                <span class="ribbon" title="Editar mês atual"></span>
+                <span class="budget-no-pending ui-icon ui-icon-check" title="Orçamento concluído"></span>
+                <span class="budget-pending ui-icon ui-icon-alert" title=""></span>
+                <span class="budget-income fields" title="Renda para dezembro">
+                  <span class="budget-income-value">0,00</span>
+                </span>
+                <span class="budget-expense fields" title="Orçado em dezembro">-
+                  <span class="budget-expense-value">0,00</span>
+                </span>
+                <span class="budget-balance fields" title="">=
+                  <span class="budget-balance-value">R$ 0,00</span>
+                </span>
+                <span class="budget-accumulated fields" title="">
+                  <span class="plus">+</span>
+                  <span class="budget-accumulated-value">0,00</span>
+                </span>
+                <span class="budget-available fields" title="">=
+                  <span class="budget-available-value">R$ 0,00</span>
+                </span>
+              </a>
+              <div class="msg-new-budget">Criar o orçamento do mês
+                <strong>dezembro de
+                  <span class="budget-year">2011</span>
+                </strong>
+              </div>
+            </div>
+            <div class="loader"></div>
+          </div>
+        </div>
+        <!--div#monthly-list-itens-->
+        <div class="clearfix"></div>
+      </div>
+
+
+      <img src="/img/css/budgets/clean-big-notebook.png" id="img-animate" width="194" height="160" alt="" />
+      <div id="open-budget" class="">
+        <div id="budget-book" data-id="" class="loading">
+          <div class="top"></div>
+          <div class="middle">
+            <section class="content-area">
+              <header class="budget-header">
+                <h2>
+                  <a href="#/prev/" id="btn-prev" class="disabled opacity-20" style="display:none;" title=""></a>
+                  <span id="budget-month-h2"></span>
+                  <a href="#/next/" id="btn-next" class="disabled opacity-20" style="display:none;" title=""></a>
+                  <div id="msg-9" class="get-started-msg">
+                    <div class="arrow"></div>
+                    <span class="text">Mês do orçamento</span>
+                  </div>
+                </h2>
+                <button id="btn-close-month">
+                  <span>Todos os Meses</span>
+                </button>
+                <a href="#/" class="button disabled" id="btn-finish-budget" style="display:none;">pronto, acabei &raquo;</a>
+                <div id="budget-actions" style="display:none;">
+                  <div>
+                    <button id="btn-more">Mais</button>
+                    <ul id="btn-more-menu">
+                      <li>
+                        <a class="btn-open-replication-confirmation" href="#/replicate/">Replicar um orçamento anterior</a>
+                      </li>
+                      <li>
+                        <a class="btn-open-delete-budget-confirmation" href="#/delete/">Excluir orçamento</a>
+                      </li>
+                      <li class="divider">
+                        <a></a>
+                      </li>
+                      <li>
+                        <a class="btn-open-budget-help btn-link-help" href="#/help/orcamento-mensal/">Ajuda</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </header>
+              <div id="ff-bug-fix">
+                <section id="income-side" class="budits-area">
+                  <header>
+                    Renda
+                  </header>
+                  <div class="budits-inner">
+                    <div id="eu-trabalhando" class="macro-categoria">
+                      <h4 title="Eu trabalhando pelo dinheiro">Renda do trabalho
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="rt-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/renda-do-trabalho/" title="Ajuda">?</a>
+                      <ul id="rt">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhuma renda do trabalho.
+                          <a href="#/" title="Adicionar renda no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-1" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Rendas vindas de seu trabalho</span>
+                      </div>
+                      <div class="element-circle"></div>
+                    </div>
+                    <!-- #eu-trabalhando -->
+
+                    <div id="dinheiro-trabalhando" class="macro-categoria">
+                      <h4 title="Dinheiro trabalhando para mim">Renda de investimentos
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="ri-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/renda-de-investimentos/" title="Ajuda">?</a>
+                      <ul id="ri">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhuma renda de investimentos.
+                          <a href="#/" title="Adicionar renda no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-2" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Rendas vindas de retorno de seus investimentos</span>
+                      </div>
+                    </div>
+                    <!-- #dinheiro-trabalhando -->
+
+                    <div id="renda-atipica" class="macro-categoria">
+                      <h4>Renda atípica
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="ra-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/renda-atipica/" title="Ajuda">?</a>
+                      <ul id="ra">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhuma renda atípica.
+                          <a href="#/" title="Adicionar renda no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-3" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Rendas não previstas ou outras rendas incomuns</span>
+                      </div>
+                    </div>
+                    <!-- #renda-atipica -->
+                  </div>
+                  <!-- .budits-inner -->
+                  <footer>
+                    <div class="footer-inner">
+                      Renda total
+                      <div id="income-total">R$ 0,00</div>
+                    </div>
+                  </footer>
+                </section>
+                <!-- #income-side -->
+                <section id="expense-side" class="budits-area">
+                  <header>
+                    Despesas
+                  </header>
+                  <div class="budits-inner">
+                    <div id="impostos-e-descontos" class="macro-categoria">
+                      <h4>Gastos na fonte
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="gf-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/gastos-na-fonte/" title="Ajuda">?</a>
+                      <ul id="gf">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhum gasto na fonte.
+                          <a href="#/" title="Adicionar gasto no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-4" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Aqueles gastos que chegam antes mesmo do dinheiro entrar no seu bolso</span>
+                      </div>
+                    </div>
+                    <!-- #impostos-e-descontos -->
+
+                    <div id="gastos-dia-a-dia" class="macro-categoria">
+                      <h4>Gastos do dia a dia
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="gd-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/gastos-do-dia-a-dia/" title="Ajuda">?</a>
+                      <ul id="gd">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhum gasto do dia a dia.
+                          <a href="#/" title="Adicionar gasto no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-5" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Aqueles pequenos gastos que ocorrem ao longo do mês</span>
+                      </div>
+                    </div>
+                    <!-- #gastos-dia-a-dia -->
+
+                    <div id="gastos-comprometidos" class="macro-categoria">
+                      <h4>Gastos comprometidos
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="gc-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/gastos-comprometidos/" title="Ajuda">?</a>
+                      <ul id="gc">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhum gastos comprometidos.
+                          <a href="#/" title="Adicionar gasto no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-6" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Aqueles gastos que têm uma data certa para pagar</span>
+                      </div>
+                    </div>
+                    <!-- #gastos-comprometidos -->
+
+                    <div id="gastos-atipicos" class="macro-categoria">
+                      <h4>Gastos atípicos
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="ga-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/gastos-atipicos/" title="Ajuda">?</a>
+                      <ul id="ga">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhum gasto atípico.
+                          <a href="#/" title="Adicionar gasto no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-7" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Aqueles gastos que você não esperava no mês</span>
+                      </div>
+                    </div>
+                    <!-- #gastos-atipicos -->
+
+                    <div id="investimentos" class="macro-categoria">
+                      <h4>Investimentos
+                        <div class="ui-icon ui-icon-circlesmall-minus btn-expand-collapse btn-toggle-macro-category"></div>
+                      </h4>
+                      <div class="total-categoria" id="iv-total">R$ 0,00</div>
+                      <a class="btn-category-help" href="#/help/investimentos/" title="Ajuda">?</a>
+                      <ul id="iv">
+                        <!--budits vem aqui-->
+                        <li class="budit-add not-sortable">
+                          <a href="#/add-budit/" title="Adicionar item" class="btn-add-budit">Adicionar item [+]</a>
+                        </li>
+                      </ul>
+                      <div class="empty-category">
+                        <span class="description">Você não possui nenhum valor destinado aos seus investimentos.
+                          <a href="#/" title="Adicionar um investimento no orçamento" class="btn-add-first-budit">Adicionar item</a>
+                        </span>
+                      </div>
+                      <div class="loading">
+                        <div class="loader"></div>
+                        &nbsp;&nbsp;&nbsp;Carregando...
+                      </div>
+                      <div id="msg-8" class="get-started-msg">
+                        <div class="arrow"></div>
+                        <span class="text">Montante mensal destinado para
+                          <em>enriquecer você</em>.</span>
+                      </div>
+                    </div>
+                    <!-- #investimentos -->
+                  </div>
+                  <!-- .budits-inner -->
+                  <footer>
+                    <div class="footer-inner">
+                      Despesas totais
+                      <div id="expense-total">R$ 0,00</div>
+                    </div>
+                  </footer>
+                </section>
+                <!-- #expense-side -->
+              </div>
+              <div class="clearfix"></div>
+              <footer class="budget-footer">
+                <div id="calcs">
+                  <div id="calc-details">
+                    <div id="income-in-month" class="line">
+                      <span class="value">
+                        <span id="income-in-month-value">0,00</span>
+                      </span>
+                      <span class="description">Renda para
+                        <span class="month-name"></span>
+                      </span>
+                    </div>
+                    <div id="expense-in-month" class="line">
+                      <span class="value">-
+                        <span id="expense-in-month-value">0,00</span>
+                      </span>
+                      <span class="description">Orçado em
+                        <span class="month-name"></span>
+                      </span>
+                    </div>
+                    <div id="balance-in-month" class="line positive">
+                      <span class="value">=
+                        <span id="balance-in-month-value">R$ 0,00</span>
+                      </span>
+                      <span class="description">
+                        <span class="available">Sobra
+                          <span class="is-estimate">estimada </span>em </span>
+                        <span class="overbudgeted">Déficit
+                          <span class="is-estimate">estimado </span>em </span>
+                        <span class="month-name"></span>
+                      </span>
+                    </div>
+                    <div id="accumulated-balance" class="line positive">
+                      <span class="value">
+                        <span class="plus">+</span>
+                        <span id="accumulated-balance-value">0,00</span>
+                      </span>
+                      <span class="description">
+                        <span class="available">Sobra acumulada no mês anterior</span>
+                        <span class="overbudgeted">Déficit acumulado no mês anterior</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div id="available-to-budget" class="positive">
+                    <span class="value">=
+                      <span id="available-to-budget-value">R$ 0,00</span>
+                    </span>
+                    <span class="description">
+                      <span class="available">Disponível para orçar</span>
+                      <span class="overbudgeted">Orçamento excedido</span>
+                    </span>
+                  </div>
+                </div>
+              </footer>
+            </section>
+            <!-- .content-area -->
+          </div>
+          <!-- div.middle -->
+          <div class="bottom"></div>
+        </div>
+        <!-- div#budget-book -->
+      </div>
+      <!--div#open-budget-->
+
+      <div id="delete-budit-confirmation" title="Excluindo item" class="dialog-confirmation-v2" style="display:none;">
+        <div class="alert">
+          <span class="ui-icon ui-icon-alert"></span>
+          <p>
+            <strong>Atenção!</strong> Você irá excluir
+            <span id="budit-type-text"></span>:
+            <span id="budit-to-delete" data-tag-id=""></span>
+          </p>
+        </div>
+        <footer>
+          <a href="#/" class="button gray" id="btn-cancel-delete-budit">Cancelar</a>
+          <a href="#/" class="button gray" id="btn-delete-budit">Excluir
+            <span id="budit-type-btn"></span>
+          </a>
+        </footer>
+      </div>
+      <!--div#delete-budit-confirmation-->
+
+      <div id="budget-ready-confirmation" title="Confirmação" class="confirmation-dialog" style="display:none;">
+        <div class="dialog-msg">
+          <div class="ui-icon ui-icon-alert"></div>
+          <p class="pergunta">Você adicionou todos os itens que você se lembra para o mês?</p>
+          <p class="obs">
+            <a class="btn-link-help" href="#/help/orcamento-mensal/" title="Ajuda">Veja exemplos</a> e saiba como funciona seu orçamento mensal no Goldmap.</p>
+          <footer>
+            <a href="#/" class="button gray cancel" id="btn-cancel-budget-ready">Ainda não</a>
+            <a href="#/" class="button gray ok" id="btn-budget-ready">Sim, todos.</a>
+          </footer>
+        </div>
+        <div class="dialog-waiting">
+          <div class="loader"></div>
+          &nbsp;&nbsp;&nbsp;Aguarde...
+        </div>
+      </div>
+      <!--div#budget-ready-confirmation-->
+
+      <div id="delete-budget-confirmation" title="Excluindo orçamento" class="dialog-confirmation-v2" style="display:none;">
+        <div class="dialog-msg">
+          <div class="alert">
+            <p>
+              <span class="ui-icon ui-icon-alert"></span>
+              <strong>Atenção!</strong> Você irá excluir todos os itens do orçamento:
+              <span id="budget-month-to-delete" data-id=""></span>
+            </p>
+            <p class="counting">Contando itens...</p>
+            <p class="counted">Esse orçamento possui
+              <span class="count"></span>
+              <span class="pluralize plural singular">
+                <span class="plural">itens</span>
+                <span class="singular">item</span>
+              </span>.</p>
+          </div>
+          <footer>
+            <a href="#/" class="button gray" id="btn-cancel-delete-budget">Cancelar</a>
+            <a href="#/" class="button gray" id="btn-delete-budget">Excluir orçamento</a>
+          </footer>
+        </div>
+        <div class="dialog-waiting">
+          <div class="loader"></div>
+          &nbsp;&nbsp;&nbsp;Aguarde...
+        </div>
+      </div>
+      <!--div#delete-budget-confirmation-->
+
+      <div id="replicate-dialog" title="Replicar orçamento anterior" style="display:none;">
+        <div class="dialog-msg">
+          <div class="replicate-content">
+            <div class="miniblock block1 input select">
+              <label class="label" for="replicate-from-budget">Replicar orçamento de...</label>
+              <select id="replicate-from-budget"></select>
+            </div>
+            <div class="arrow-right"></div>
+            <div class="miniblock block2">
+              <span class="label">Para...</span>
+              <em id="replicate-to-budget"></em>
+            </div>
+          </div>
+          <footer>
+            <a href="#/" class="button gray" id="btn-cancel-replication">Cancelar</a>
+            <a href="#/" class="button enabled" id="btn-replicate">Ok</a>
+          </footer>
+        </div>
+        <div class="dialog-waiting">
+          <div class="loader"></div>
+          &nbsp;&nbsp;&nbsp;Aguarde...
+        </div>
+      </div>
+      <!--div#replicate-dialog-->
+
+      <div id="transactions-dialog" title="Transação de pagamento" class="dialog-confirmation-v2" style="display:none;">
+        <div class="transactions-dialog-content">
+          <div class="info">
+            <span class="ui-icon ui-icon-check"></span>
+            <p>Valor
+              <span class="word1">
+                <span class="rt ri ra">recebido</span>
+                <span class="gf gc ga iv">pago</span>
+                <span class="gd">total pago</span>
+              </span> de
+              <span id="transaction-total-value"></span>.</p>
+          </div>
+          <table class="datagrid datagrid-transactions">
+            <thead>
+              <tr class="column-names">
+                <th class="c0">
+                  <span class="word1">
+                    <span class="rt ri ra">Recebido</span>
+                    <span class="gf gd gc ga iv">Pago</span>
+                  </span> via...</th>
+                <th class="c1">Conciliado em...</th>
+                <th class="c2">Histórico</th>
+                <th class="c3">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td class="c0 label" colspan="3">Total »</td>
+                <td class="c3 calc" id="datagrid-transactions-total"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="no-transactions">
+          <div class="info">
+            <span class="ui-icon ui-icon-info"></span>
+            <p>Sem transação de
+              <span class="word1">
+                <span class="rt ri ra">recebimento</span>
+                <span class="gf gd gc ga iv">pagamento</span>
+              </span> vinculada a esse item de orçamento.</p>
+          </div>
+        </div>
+        <div class="dialog-waiting">
+          <div class="loader"></div>
+          &nbsp;&nbsp;&nbsp;Aguarde...
+        </div>
+      </div>
+      <!--div#transactions-dialog-->
+
+    </div>
+    <!--div#budgets.index-->
+    <div id="templates" style="display:none;">
+      <div id="annual-budget-template" data-id="" class="notebook annual new empty-year no-pending">
+        <nav class="actions">
+          <a href="#/delete/{year}/" class="ui-icon ui-icon-trash btn-confirm-delete-year" title="Excluir"></a>
+        </nav>
+        <div class="content">
+          <a href="#/{year}/" class="budget-link btn-open-year">
+            <span class="budget-name">Ano </span>
+            <span class="budget-subtitle">Previsão</span>
+            <span class="ribbon" title="Editar ano atual"></span>
+            <span class="budget-no-pending ui-icon ui-icon-check" title="Ano concluído"></span>
+            <span class="budget-pending ui-icon ui-icon-alert" title="0 itens pendentes"></span>
+            <span class="budget-income fields" title="">
+              <span class="budget-income-value">0,00</span>
+            </span>
+            <span class="budget-expense fields" title="">-
+              <span class="budget-expense-value">0,00</span>
+            </span>
+            <span class="budget-balance fields positive" title="">=
+              <span class="budget-balance-value">R$ 0,00</span>
+            </span>
+            <span class="budget-accumulated fields" title="">
+              <span class="plus">+</span>
+              <span class="budget-accumulated-value">0,00</span>
+            </span>
+            <span class="budget-available fields" title="">=
+              <span class="budget-available-value">R$ 0,00</span>
+            </span>
+          </a>
+        </div>
+        <div class="new-budget">
+          <span class="budget-name">Ano </span>
+          <input type="text" maxlength="4" class="input-budget-year" title="Digite o ano que deseja adicionar. Ex: 2018" />
+          <div class="errors">
+            <span class="text"></span>
+            <span class="seta"></span>
+          </div>
+          <span class="save-tips">
+            ENTER para
+            <a href="#/save/" id="btn-save">salvar</a>
+            <br /> ESC para
+            <a href="#/cancel/" id="btn-save-cancel">cancelar</a>
+          </span>
+        </div>
+        <div class="overlay opacity-10"></div>
+      </div>
+      <li id="budit-template" data-id="0" data-order="0" data-is-paid="false" data-first-edit="true" class="budit">
+        <div class="view">
+          <div class="line">
+            <div class="name btn-edit-budit">
+              <div class="btn-drag-budit"></div>
+              <span class="value"></span>
+            </div>
+            <div class="duedate btn-edit-budit">
+              <span class="value"></span>
+            </div>
+            <div class="bars btn-edit-budit">
+              <div class="budit-bar well-worn-bar">
+                <span class="value"></span>
+              </div>
+            </div>
+            <div class="amount btn-edit-budit">
+              <span class="value"></span>
+            </div>
+            <div class="paid btn-edit-budit">
+              <div class="ui-icon is-paid" title="Pago"></div>
+            </div>
+          </div>
+        </div>
+        <form class="edit">
+          <div class="line">
+            <input type="hidden" name="data[Budit][id]" value="0" />
+            <input type="hidden" name="data[Budit][budget_id]" value="0" />
+            <input type="hidden" name="data[Budit][macrocategory]" value="" />
+            <input type="hidden" name="data[Budit][paid_amount]" value="" />
+            <input type="hidden" name="data[Budit][order]" value="0" />
+            <div class="name">
+              <input name="data[Budit][name]" type="text" value="" maxlength="50" title="Digite o nome do item" />
+            </div>
+            <div class="duedate">
+              <input name="data[Budit][duedate]" type="text" value="" maxlength="6" title="Dia do vencimento" />
+            </div>
+            <div class="amount">
+              <input name="data[Budit][amount]" type="text" value="" title="Ajustar o valor planejado" data-alt-title="Digite o valor planejado"
+              />
+            </div>
+            <div class="paid"></div>
+          </div>
+          <div class="save">
+            <input class="btn-save-budit button gray" type="button" value="Salvar" /> ou
+            <a href="#/cancel/" class="btn-cancel-save-budit">cancelar</a>
+          </div>
+          <div class="budit-footer">
+            <div class="dropdown-budit-options">
+              <span class="btn-options fa fa-gear fa-lg"></span>
+              <ul class="btn-options-menu not-initialized">
+                <span class="arrow"></span>
+                <li class="not-sortable">
+                  <a class="btn-view-transactions" href="#/view-transactions/">
+                    <span class="msg rt ri ra gf gc ga iv">Ver transação</span>
+                    <span class="msg gd">Ver transações</span>
+                  </a>
+                </li>
+                <li class="not-sortable">
+                  <a class="btn-open-delete-budit-confirmation-2 disabled ui-state-disabled" href="#/delete-item/" title="">Aguarde...
+                    <!-- Excluir item -->
+                  </a>
+                </li>
+                <li class="divider not-sortable">
+                  <a></a>
+                </li>
+                <li class="not-sortable">
+                  <a class="created ui-state-disabled disabled">Criado em
+                    <span class="value" data-date=""></span>
+                  </a>
+                </li>
+                <li class="not-sortable">
+                  <a class="modified ui-state-disabled disabled">Modificado em
+                    <span class="value" data-date=""></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+        <a href="#/delete/" title="Excluir" class="btn-open-delete-budit-confirmation">
+          <span class="ui-icon ui-icon-trash"></span>
+        </a>
+      </li>
+      <span id="icon-gd-unknown-template" class="ui-icon ui-icon-info">
+        <p>Esse item serve para você alocar todas as pequenas diferenças das quais você não se lembra de jeito algum.</p>
+        <p>O ideal é que o total de gastos alocados aqui, represente no máximo
+          <strong>3%</strong> dos seus gastos mensais totais.</p>
+      </span>
+      <table>
+        <tr id="datagrid-transactions-row-tamplate">
+          <td class="c0">
+            <div class="account-cell">
+              <div class="bank-icon"></div>
+              <div class="line-content">
+                <span class="account-name"></span>
+                <span class="account-type"></span>
+              </div>
+            </div>
+          </td>
+          <td class="c1"></td>
+          <td class="c2"></td>
+          <td class="c3"></td>
+        </tr>
+      </table>
+    </div>
+    <input type="hidden" id="autonumeric-temp" />
+    <div id="get-started-budget">
+      <div id="i-am-ready-bg" class="opacity-60"></div>
+      <div id="i-am-ready">
+        <h4>Aqui está como funciona seu orçamento mensal</h4>
+        <!-- <h4>Agora você vai criar seu primeiro orçamento mensal</h4> -->
+        <a href="#/" id="btn-hide-tips" class="button gray">Ok, começar &raquo;</a>
+        <span class="other-text">
+          ou
+          <a id="btn-budget-help" href="#/help/orcamento-mensal/">saiba mais</a>
+        </span>
+      </div>
+
+      <div id="overlay-tips" class="ui-widget-overlay opacity-60" tabindex="-1"></div>
+    </div>
+    <div style="display:none;" id="ui-widget-overlay-ajax" class="ui-widget-overlay opacity25" tabindex="-1">
+      <div class="loader"></div>
+    </div>
+    <div id="help-dialog" tabindex="-1" title="Ajuda" style="display:none;"></div>
+  </div>
+  <!--div#content-->
+  <footer>
+  </footer>
+  <script type="text/javascript">globals = { base: '', email: 'diego.menezzes@gmail.com' }</script>
+  <script type="text/javascript" src="/js/libs/jquery.1482832763.js"></script>
+  <script type="text/javascript" src="/js/libs/jquery-ui.1482832763.js"></script>
+  <script type="text/javascript" src="/js/plugins.1482832875.js"></script>
+  <script type="text/javascript" src="/js/script.1482832875.js"></script>
+  <script type="text/javascript">$(document).ready(function () { views.layouts.logged.init(); });</script>
+  <script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function () { views.budgets.init(6, 1); });
+//]]>
+  </script>
+  <!--[if lt IE 7 ]><script type="text/javascript" src="/js/libs/dd_belatedpng.1482832763.js"></script><script>DD_belatedPNG.fix('img, .png_bg');</script><![endif]-->
+  <script type="text/javascript">var _kiq = _kiq || [];</script>
+  <script type="text/javascript" src="//s3.amazonaws.com/ki.js/41894/852.js" async="true"></script>
+  <script type="text/javascript" charset="utf-8">
+    _kiq.push(['identify', 'diego.menezzes@gmail.com']);
+  </script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24084925-1']);
+    _gaq.push(['_setDomainName', 'goldmap.com.br']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+
+</html>
